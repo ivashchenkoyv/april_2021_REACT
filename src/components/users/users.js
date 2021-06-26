@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default function Users(){
 
@@ -9,7 +9,7 @@ export default function Users(){
 
 
 
-// useEffect(()=>{
+useEffect(()=> {
 
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(value => value.json())
@@ -18,13 +18,13 @@ export default function Users(){
             setUserList(value);
         })
 
-
+},[])
 
 
     return(
 
         <div>
-            {userList.map(value => <div> dkjvnhtfjho</div>)}
+            {userList.map(value => <div> rrrrr</div>)}
         </div>
     )
 }
