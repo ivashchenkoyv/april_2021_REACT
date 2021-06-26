@@ -13,9 +13,9 @@ useEffect(()=> {
 
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(value => value.json())
-        .then(value => {
-            console.log(value)
-            setUserList(value);
+        .then(response => {
+            console.log(response)
+            setUserList(response);
         })
 
 },[])
@@ -24,7 +24,9 @@ useEffect(()=> {
     return(
 
         <div>
-            {userList.map(value => <div> rrrrr</div>)}
+            {
+                userList.map(value => <div>{value.id}-{value.name} </div>)
+            }
         </div>
     )
 }
