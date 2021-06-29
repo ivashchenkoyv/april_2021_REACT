@@ -4,11 +4,10 @@ import axios from "axios";
 
 
 const getUsers=()=>{
-    axiosInstance.get('/users')
-    }
+   return  axiosInstance.get('/users');}
 
 const getUser=(id)=>{
-    axiosInstance.get('/users'+id)
-}
+   return axiosInstance.get('/users'+id);}
 
 export {getUsers,getUser}
+console.log(getUsers,getUser)
