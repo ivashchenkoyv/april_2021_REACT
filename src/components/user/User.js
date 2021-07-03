@@ -1,24 +1,12 @@
-import {useEffect, useState} from "react";
-
-export default function User({item}) {
-
-    let [getUser, getUsers] = useState([])
-
-    useEffect(() => {
-
-        fetch('https://jsonplaceholder.typicode.com/')
-            .then(value => value.json())
-            .then(value => {
-                console.log(value);
-                getUsers(value)
-            })
-
-        // getUsers().then(value=>setUsers([...value.data]))
-    })
+export default function User({item, fnFather}) {
 
 
     return (<div>
-        {item.name}
+
+        {item.id}-{item.name}-
+
+        <button onClick={() => fnFather(item.id)}>click me</button>
+
     </div>)
 }
 

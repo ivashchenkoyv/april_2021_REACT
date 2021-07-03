@@ -1,16 +1,10 @@
-import {useEffect} from "react";
-import {getUsers} from "../api/Api";
+import User from "../user/User";
 
-export default function Users() {
-
-useEffect(getUsers()=>{
-
-    })
-
+export default function Users({items, appFn}) {
 
     return (
         <div>
-            Users
+            {items.map((value) => <User key={value.id} item={value} fnFather={appFn}/>)}
         </div>
     );
 }

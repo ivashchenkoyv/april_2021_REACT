@@ -3,24 +3,17 @@ import axios from "axios";
 //
 // let options={aseURL:'https://jsonplaceholder.typicode.com/'
 // }
-let axiosInstance=axios.create({aseURL:'https://jsonplaceholder.typicode.com/'});
+let axiosInstance = axios.create({baseURL: 'https://jsonplaceholder.typicode.com'});
 
 // const getUsers=()=>axiosInstance.get('/users');
 
-const getUsers=()=>{
+const getUsers = () => {
     return axiosInstance.get('/users');
 };
 
-const getUser=(id)=>{
-    return axiosInstance.get('/users'+id);
-};
-const getPosts=()=>{
-    return axiosInstance.get('/posts');
+const getUser = (id) => {
+    return axiosInstance.get('/users/' + id);
 };
 
 
-
-console.log(getUser())
-console.log(getUsers())
-console.log(getPosts())
-export {getUsers,getUser,getPosts}
+export {getUsers, getUser}
