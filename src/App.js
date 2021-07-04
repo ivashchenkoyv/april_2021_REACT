@@ -17,13 +17,16 @@ export default function App() {
 
   useEffect(()=>{
 
-    getPosts().then(value => setPost(value.data));
+    getPosts().then(value => setPosts(value.data));
   },[])
 
 
   return (
     <div >
 <Posts items={posts} appFn={appFn}/>
+
+      <hr/>{post && <div>{JSON.stringify(post)}</div>}<hr/>
+      
     </div>
   );
 }
