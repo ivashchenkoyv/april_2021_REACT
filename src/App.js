@@ -1,24 +1,29 @@
-import {BrowserRouter as Router, Link,Route} from 'react-router-dom'
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import Users from "./components/users/Users";
-import {getUsers} from './services/Api'
+import Comments from "./components/comments/Comments";
+import Posts from "./components/posts/Posts";
 
 export default function App() {
+
     return (
         <Router>
-
             <div>
-                <Link to={'/users'}>to users page</Link>
+                <Link to={'/users'}>users page</Link>
                 <br/>
-                <Link to={'/posts'}>to posts page</Link>
+                <Link to={'/posts'}>posts page</Link>
                 <br/>
-                <Link to={'/comments'}>to comments page</Link>
+                <Link to={'/comments'}>comments page</Link>
+                <br/>
 
-                <Route path={'/users'} render={()=><getUsers/>}/>
-                <Route path={'/posts'} render={()=><div>{getUsers}</div>}/>
-                <Route path={'/comments'} render={()=><div>comments page</div>}/>
+                <Route path={'/users'} render={()=><Users/>}/>
+                <Route path={'/posts'} render={() => <Posts/>}/>
+                <Route path={'/comments'} component={Comments}/>
+
+
             </div>
-        </Router>
-    );
-}
 
-// export default App;
+        </Router>
+
+    )
+
+}
