@@ -2,9 +2,10 @@ export default function Post({item,fnFather}){
 
     return(
         <div>
-            'userId:'{item.userId}-'id:'{item.id}-{item.body}-
+            <h3>userId: {item.userId}- id:{item.id}</h3>
+            <p>{item.body}</p>
             <button onClick={()=>fnFather(item.userId)}>click me</button>
-
+            <hr/>
         </div>
     )
 }

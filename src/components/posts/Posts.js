@@ -4,9 +4,9 @@ export default function Posts({items,appFn}){
 
     return(
 
-        <div>
+        <div className={'posts'}>
             {
-                items.map((value)=> <Post key={value.userId} item={value} fnFather={appFn}/>)
+                items.map((value)=> <Post key={value.id} item={value} fnFather={appFn}/>)
             }
 
         </div>

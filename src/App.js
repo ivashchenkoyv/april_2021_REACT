@@ -8,6 +8,7 @@ import Posts from "./components/posts/Posts";
 export default function App() {
 
   let [post,setPost]=useState();
+  console.log(post);
   let appFn=(userId)=>{
     getPostsOfUser(userId).then(value => setPost(value.data));
   };
@@ -23,9 +24,12 @@ export default function App() {
 
   return (
     <div >
-<Posts items={posts} appFn={appFn}/>
+    <Posts items={posts} appFn={appFn}/>
 
-      <hr/>{post && <div>{JSON.stringify(post)}</div>}<hr/>
+      {post && post.map(value => <div key={value.id}>
+      <h2>{value.userId}. {value.title}</h2>
+      <p>{value.body}</p>
+    </div>)}
       
     </div>
   );
