@@ -1,7 +1,8 @@
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
-import Users from "./components/users/Users";
 import Comments from "./components/comments/Comments";
 import Posts from "./components/posts/Posts";
+// import Us from "./components/users/Us";
+import Users from "./components/users/Users";
 
 export default function App() {
 
@@ -15,7 +16,7 @@ export default function App() {
                 <Link to={'/comments'}>comments page</Link>
                 <br/>
 
-                <Route path={'/users'} render={()=><Users/>}/>
+                <Route path={'/users'} render={()=> <Users/>}/>
                 <Route path={'/posts'} render={() => <Posts/>}/>
                 <Route path={'/comments'} component={Comments}/>
 
