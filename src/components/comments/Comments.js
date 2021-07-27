@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {getComments} from "../../services/Api";
+import Comment from "./Comment";
 
 export default function Comments() {
     let [comments,setComments]=useState([])
@@ -10,7 +11,7 @@ export default function Comments() {
 
     return (
         <div>
-            {JSON.stringify(comments)}
+            {comments.map(value => <Comment key={value.id} item={value}/>)}
 
         </div>
     );
